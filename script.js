@@ -4,22 +4,31 @@ const nameInput = document.getElementById('name');
 const ageInput = document.getElementById('age');
 
 if(!nameInput || !ageInput){
-    console.error('Los elementos del formularion mo existen.');
+    console.error('Los elementos del formularion no existen.');
     return;
 }
 
 const name = nameInput.value.trim();
 const age = parseInt(ageInput.value)
 
-if (name && !isNaN(age)){
-    localStorage.setItem('userName',name);
-    localStorage.setItem('userAge',age);
+if (validateLetters(name) && !isNaN(age)){
+    localStorage.setItem('userName', name);
+    localStorage.setItem('userAge', age);
     displayData();
 
 }else{
     alert('Ingrese un nombre valido y una edad numerica.');
 }
+
+
 });
+
+
+//funcion para validar entreada de datos solo (letras)
+function validateLetters(str){
+    const regrex =/^[A-Za-z\s]+$/
+    return regrex.test(str)
+}
 
 
 function displayData(){
@@ -34,24 +43,28 @@ function displayData(){
     }
 } 
 
-//Datod almacenados 
+//Datos almacenados 
 
 window.onload = displayData;
 
+
+// Contador de interacciones con usuario
+
 if(!sessionStorage.getItem('interactionCount')){
 
-    sessionStorage.setItem('interaction', 0);   
+    sessionStorage.setItem('interactionCount', 0);   
 }
 
-function uptadeInteractionCount(){
-    let count = parseInt(sessionStorage.getItem('inractionCount'));
+function updateInteractionCount(){
+    let count = parseInt(sessionStorage.getItem('interactionCount'));
     count++;
     sessionStorage.setItem('interactionCount',count);
-    console.log(`Interaciones en esta sesión: ${count}`);
+    console.log(`Interactions in this session: ${count}`);
 }
 
-document.getElementById(`saveButton`).addEventListener(`click`,uptadeInteractionCount);
-document.getElementById(`clearButton`).addEventListener(`click`,uptadeInteractionCount)
+
+document.getElementById(`saveButton`).addEventListener(`click`,updateInteractionCount);
+document.getElementById(`clearButton`).addEventListener(`click`,updateInteractionCount)
 
 
 document.getElementById('clearButton').addEventListener('click', ()=>{

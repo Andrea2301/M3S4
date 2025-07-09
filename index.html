@@ -9,14 +9,23 @@
 <body>
     <main class="main">
         <form>
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
-            <label for="age">Age</label>
-            <input type="number" id="age" name="age" required>
-            <button type="button" id="saveButton">Save Data</button>
-            <button type="button" id="clearButton">Clear Data</button>
+            <h2>USER</h2>
+            <div class="form-wrapper">
+
+                <label for="name"></label>
+                <input type="text" id="name" name="name" placeholder="NAME" required>
+                <label for="age"></label>
+                <input type="number" id="age" name="age" placeholder="AGE">
+                <div class="buttons">
+                    <button type="button" id="saveButton">Save Data</button>
+                    <button type="button" id="clearButton">Clear Data</button>
+                </div>
+            </div>
+          
         </form>
         <div id="output"></div>
+        <div id="outText"></div>
+   
     </main>
     
 </body>
