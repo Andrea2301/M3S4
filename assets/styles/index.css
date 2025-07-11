@@ -1,22 +1,84 @@
-*{
+/* Estilo general en modo oscuro */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    background-color: transparent;
-    outline: 0;
-    border: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-input, button{
-    padding: .5rem;
-    border: 1px solid black;
+body {
+    background-color: #121212;
+    color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-.main{
-    margin: 20px;
-    background-color: rgb(243, 243, 243);
-    height: 400px;
-    border-radius: 20px;
-   
+/* Contenedor principal */
+.main {
+    background-color: #1e1e1e;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    width: 320px;
 }
 
+/* Formulario */
+form h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="number"] {
+    padding: 10px;
+    background-color: #2c2c2c;
+    border: 1px solid #555;
+    border-radius: 8px;
+    color: #fff;
+}
+
+input::placeholder {
+    color: #aaa;
+}
+
+/* Botones */
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+button {
+    flex: 1;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #444;
+}
+
+/* Output */
+#output, #outText {
+    margin-top: 1.5rem;
+    background-color: #2a2a2a;
+    padding: 1rem;
+    border-radius: 8px;
+    color: #dcdcdc;
+    min-height: 40px;
+}
